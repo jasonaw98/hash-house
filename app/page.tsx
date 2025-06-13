@@ -646,15 +646,15 @@ export default function LandingPage() {
                   <AccordionContent>
                     You can register for Hash House Harriers 2026 by filling out
                     the registration form on this website. Scroll down to the
-                    "Register Now" section or click the "Register Now" button in
-                    the navigation menu. You'll need to provide your personal
+                    Register Now section or click the Register Now button in
+                    the navigation menu. You will need to provide your personal
                     details, select your race package, and complete the payment
                     process.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
                   <AccordionTrigger>
-                    What's included in the registration fee?
+                    What is included in the registration fee?
                   </AccordionTrigger>
                   <AccordionContent>
                     Your registration fee includes an official race bib with
@@ -664,18 +664,6 @@ export default function LandingPage() {
                     celebration. Depending on your package, you may also receive
                     additional benefits like digital race photos and training
                     plans.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                  <AccordionTrigger>
-                    Can I transfer my registration to someone else?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Yes, registration transfers are allowed up to 30 days before
-                    the event. To transfer your registration, please email
-                    transfers@hashhouseharriers.com with your registration
-                    details and the information of the person you're
-                    transferring to. A transfer fee of $15 will apply.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
@@ -702,60 +690,6 @@ export default function LandingPage() {
                     will be available from 5:30 AM to 8:30 AM, but we strongly
                     encourage participants to pick up their packets in advance
                     to avoid race-day stress.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-7">
-                  <AccordionTrigger>
-                    Is there parking available at the event?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Limited parking is available near Central Park, but we
-                    strongly encourage participants to use public transportation
-                    or rideshare services. We've arranged for special event
-                    parking at a discounted rate at the 5th Avenue Parking
-                    Garage, located 0.5 miles from the start/finish area.
-                    Parking passes can be purchased during registration for $20.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-8">
-                  <AccordionTrigger>
-                    Will there be bag check services?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Yes, we provide a secure bag check service free of charge
-                    for all participants. The bag check area will be clearly
-                    marked near the start/finish area. You'll receive a bag tag
-                    with your race number during packet pickup. Please note that
-                    we're not responsible for lost or stolen items, so we
-                    recommend not bringing valuables.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-9">
-                  <AccordionTrigger>
-                    What happens if there's bad weather?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Hash House Harriers 2026 will take place rain or shine. In
-                    case of severe weather conditions that could compromise
-                    participant safety (such as lightning, severe storms, or
-                    extreme heat), the event organizers may delay, modify, or
-                    cancel the event. In case of cancellation due to extreme
-                    circumstances, we will not be able to offer refunds as
-                    preparations and expenses for the event have already been
-                    incurred.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-10">
-                  <AccordionTrigger>
-                    Can I bring spectators to cheer me on?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Absolutely! Spectators are welcome and encouraged to attend.
-                    There will be designated spectator areas along the course
-                    and at the finish line. We'll also have a spectator guide
-                    available on our website one week before the event with the
-                    best viewing spots, estimated runner times, and amenities
-                    available for spectators.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
