@@ -846,9 +846,9 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="w-full border-t bg-background">
-        <div className="flex flex-col items-center justify-center gap-4 py-10 md:py-8">
+        <div className="flex flex-col items-center justify-center gap-4 py-10 md:py-8 px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-18">
-            <div>
+            <div className='flex flex-col items-center md:items-start text-center'>
               <h3 className="text-2xl font-bold pb-2">Stay Connected</h3>
               <p className="py-2">
                 Follow us on social media for updates and community highlights!
@@ -870,7 +870,7 @@ export default function LandingPage() {
                 </Link>
               </div>
             </div>
-            <div className="md:pl-10">
+            <div className="md:pl-10 flex flex-col items-center md:items-start text-center">
               <h3 className="text-2xl font-bold pb-2">Contact Us</h3>
 
               <div className="flex flex-col gap-4 py-3">
