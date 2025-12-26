@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <Script
         defer
-        src="https://umami-analytics-gules.vercel.app/script.js"
+        src="https://umami-jason.vercel.app/script.js"
         data-website-id="d27bb1cb-20eb-482c-81fd-48ff28fada59"
       ></Script>
       <body

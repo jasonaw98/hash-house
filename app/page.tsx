@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import {
   Facebook,
   Instagram,
@@ -19,17 +20,18 @@ import {
   Users,
   Mail,
   Phone,
-} from 'lucide-react';
-import { CountdownTimer } from '@/components/countdown-timer';
+} from "lucide-react";
+import { CountdownTimer } from "@/components/countdown-timer";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { NumberTicker } from '@/components/magicui/number-ticker';
-import Disney from '@/components/icons/DisneyIcon';
-import Google from '@/components/icons/GoogleIcon';
+} from "@/components/ui/accordion";
+import { NumberTicker } from "@/components/magicui/number-ticker";
+import Disney from "@/components/icons/DisneyIcon";
+import Google from "@/components/icons/GoogleIcon";
+import { motion } from "motion/react";
 
 export default function LandingPage() {
   return (
@@ -107,7 +109,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-5xl lg:text-7xl">
-                  Hash House Harriers{' '}
+                  Hash House Harriers{" "}
                   <NumberTicker
                     value={2026}
                     startValue={2000}
@@ -142,7 +144,7 @@ export default function LandingPage() {
               <div className="mt-12 mb-6">
                 <h3 className="text-2xl font-semibold mb-2">Event Countdown</h3>
                 <CountdownTimer
-                  targetDate={new Date('June 15, 2026 07:00:00')}
+                  targetDate={new Date("June 15, 2026 07:00:00")}
                   className="mt-2"
                 />
               </div>
@@ -171,41 +173,56 @@ export default function LandingPage() {
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
-                <ul className="grid gap-6">
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">
-                        Multiple Race Categories
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Choose from 5K, 10K, half marathon, and full marathon
-                        distances to match your fitness level.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">Professional Timing</h3>
-                      <p className="text-muted-foreground">
-                        Get accurate race timing with our professional chip
-                        timing system.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">
-                        Community Experience
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Connect with fellow runners, join training groups, and
-                        be part of a supportive community.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ amount: 0.1, once: true }}
+                >
+                  <ul className="grid gap-6">
+                    <li>
+                      <div className="grid gap-1">
+                        <h3 className="text-xl font-bold">
+                          Multiple Race Categories
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Choose from 5K, 10K, half marathon, and full marathon
+                          distances to match your fitness level.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="grid gap-1">
+                        <h3 className="text-xl font-bold">
+                          Professional Timing
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Get accurate race timing with our professional chip
+                          timing system.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="grid gap-1">
+                        <h3 className="text-xl font-bold">
+                          Community Experience
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Connect with fellow runners, join training groups, and
+                          be part of a supportive community.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </motion.div>
               </div>
-              <div className="flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+                className="flex items-center justify-center"
+              >
                 <Image
                   src="https://images.unsplash.com/photo-1524646349956-1590eacfa324?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   width={600}
@@ -213,37 +230,58 @@ export default function LandingPage() {
                   alt="Runners at the starting line"
                   className="rounded-lg object-cover shadow-2xl"
                 />
-              </div>
+              </motion.div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
-              <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
-                <Users className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">
-                  <NumberTicker
-                    value={1000}
-                    startValue={80}
-                    className="whitespace-pre-wrap tracking-tighter text-black dark:text-white"
-                  />
-                  + Participants
-                </h3>
-                <p className="text-center text-muted-foreground">
-                  Join runners from across the country
-                </p>
-              </div>
-              <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
-                <MapPin className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Scenic Routes</h3>
-                <p className="text-center text-muted-foreground">
-                  Beautiful city and park views
-                </p>
-              </div>
-              <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
-                <Clock className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">All Day Event</h3>
-                <p className="text-center text-muted-foreground">
-                  Activities from 7 AM to 5 PM
-                </p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+              >
+                <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
+                  <Users className="h-12 w-12 text-primary" />
+                  <h3 className="text-xl font-bold">
+                    <NumberTicker
+                      value={1000}
+                      startValue={80}
+                      className="whitespace-pre-wrap tracking-tighter text-black dark:text-white"
+                    />
+                    + Participants
+                  </h3>
+                  <p className="text-center text-muted-foreground">
+                    Join runners from across the country
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+              >
+                <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
+                  <MapPin className="h-12 w-12 text-primary" />
+                  <h3 className="text-xl font-bold">Scenic Routes</h3>
+                  <p className="text-center text-muted-foreground">
+                    Beautiful city and park views
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+              >
+                <div className="flex flex-col items-center space-y-2 border rounded-lg p-6 md:shadow-xl">
+                  <Clock className="h-12 w-12 text-primary" />
+                  <h3 className="text-xl font-bold">All Day Event</h3>
+                  <p className="text-center text-muted-foreground">
+                    Activities from 7 AM to 5 PM
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -419,139 +457,162 @@ export default function LandingPage() {
             </div>
             <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
               {/* 5K Package */}
-              <div className="flex flex-col rounded-lg border bg-background p-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold">5K Run</h3>
-                  <div className="text-4xl font-bold">
-                    <span className="text-2xl font-bold">RM</span>100
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+                className="flex"
+              >
+                <div className="flex flex-col rounded-lg border bg-background p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">5K Run</h3>
+                    <div className="text-4xl font-bold">
+                      <span className="text-2xl font-bold">RM</span>100
+                    </div>
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    Perfect for beginners and casual runners
+                  </p>
+                  <ul className="mt-6 space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Official race bib</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Finisher medal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Event T-shirt</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Chip timing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Post-race refreshments</span>
+                    </li>
+                  </ul>
+                  <div className="mt-auto pt-6">
+                    <Button className="w-full" asChild>
+                      <Link href="#register">Register Now</Link>
+                    </Button>
                   </div>
                 </div>
-                <p className="mt-2 text-muted-foreground">
-                  Perfect for beginners and casual runners
-                </p>
-                <ul className="mt-6 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Official race bib</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Finisher medal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Event T-shirt</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Chip timing</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Post-race refreshments</span>
-                  </li>
-                </ul>
-                <div className="mt-auto pt-6">
-                  <Button className="w-full" asChild>
-                    <Link href="#register">Register Now</Link>
-                  </Button>
-                </div>
-              </div>
+              </motion.div>
 
               {/* 10K Package */}
-              <div className="flex flex-col rounded-lg border bg-background p-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium">
-                  Popular
-                </div>
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold">10K Run</h3>
-                  <div className="text-4xl font-bold">
-                    <span className="text-2xl font-bold">RM</span>150
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+                className="flex"
+              >
+                <div className="flex flex-col rounded-lg border bg-background p-6 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium">
+                    Popular
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">10K Run</h3>
+                    <div className="text-4xl font-bold">
+                      <span className="text-2xl font-bold">RM</span>150
+                    </div>
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    For intermediate runners looking for a challenge
+                  </p>
+                  <ul className="mt-6 space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Official race bib</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Premium finisher medal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Technical running shirt</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Chip timing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Post-race meal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Digital race photos</span>
+                    </li>
+                  </ul>
+                  <div className="mt-auto pt-6">
+                    <Button className="w-full" asChild>
+                      <Link href="#register">Register Now</Link>
+                    </Button>
                   </div>
                 </div>
-                <p className="mt-2 text-muted-foreground">
-                  For intermediate runners looking for a challenge
-                </p>
-                <ul className="mt-6 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Official race bib</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Premium finisher medal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Technical running shirt</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Chip timing</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Post-race meal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Digital race photos</span>
-                  </li>
-                </ul>
-                <div className="mt-auto pt-6">
-                  <Button className="w-full" asChild>
-                    <Link href="#register">Register Now</Link>
-                  </Button>
-                </div>
-              </div>
+              </motion.div>
 
               {/* Half Marathon Package */}
-              <div className="flex flex-col rounded-lg border bg-background p-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold">Half Marathon</h3>
-                  <div className="text-4xl font-bold">
-                    <span className="text-2xl font-bold">RM</span>250
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ amount: 0.1, once: true }}
+              >
+                <div className="flex flex-col rounded-lg border bg-background p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold">Half Marathon</h3>
+                    <div className="text-4xl font-bold">
+                      <span className="text-2xl font-bold">RM</span>250
+                    </div>
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    For experienced runners seeking a greater challenge
+                  </p>
+                  <ul className="mt-6 space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Official race bib</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Exclusive finisher medal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Premium technical shirt</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Chip timing</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Post-race meal</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Digital race photos</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <span>Training plan access</span>
+                    </li>
+                  </ul>
+                  <div className="mt-auto pt-6">
+                    <Button className="w-full" asChild>
+                      <Link href="#register">Register Now</Link>
+                    </Button>
                   </div>
                 </div>
-                <p className="mt-2 text-muted-foreground">
-                  For experienced runners seeking a greater challenge
-                </p>
-                <ul className="mt-6 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Official race bib</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Exclusive finisher medal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Premium technical shirt</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Chip timing</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Post-race meal</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Digital race photos</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-primary" />
-                    <span>Training plan access</span>
-                  </li>
-                </ul>
-                <div className="mt-auto pt-6">
-                  <Button className="w-full" asChild>
-                    <Link href="#register">Register Now</Link>
-                  </Button>
-                </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -646,8 +707,8 @@ export default function LandingPage() {
                   <AccordionContent>
                     You can register for Hash House Harriers 2026 by filling out
                     the registration form on this website. Scroll down to the
-                    Register Now section or click the Register Now button in
-                    the navigation menu. You will need to provide your personal
+                    Register Now section or click the Register Now button in the
+                    navigation menu. You will need to provide your personal
                     details, select your race package, and complete the payment
                     process.
                   </AccordionContent>
@@ -848,7 +909,7 @@ export default function LandingPage() {
       <footer className="w-full border-t bg-background">
         <div className="flex flex-col items-center justify-center gap-4 py-10 md:py-8 px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-18">
-            <div className='flex flex-col items-center md:items-start text-center'>
+            <div className="flex flex-col items-center md:items-start text-center">
               <h3 className="text-2xl font-bold pb-2">Stay Connected</h3>
               <p className="py-2">
                 Follow us on social media for updates and community highlights!
